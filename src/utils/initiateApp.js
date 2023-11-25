@@ -1,8 +1,9 @@
 import { globalResponse } from "./errorHandler.js"
 import { nanoid } from "nanoid";
 import roomRoutes from '../modules/room/room.routes.js'
-import { IO, initiateIo } from "./ioGeneration.js";
+import { initiateIo } from "./ioGeneration.js";
 import { ExpressPeerServer } from "peer";
+import cors from 'cors'
 
 export const initiateApp = (app, express) => {
 
