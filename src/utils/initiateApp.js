@@ -12,6 +12,8 @@ export const initiateApp = (app, express) => {
     // parsing any requested data
     app.use(express.json());
 
+    app.use(cors())
+
     const server = app.listen(port, () => { console.log(`...Server is running on Port ${port}`); })
 
     const peerServer = ExpressPeerServer(server, {
@@ -25,8 +27,6 @@ export const initiateApp = (app, express) => {
     app.get('/', (req, res) => {
 
         res.redirect(`/room/${nanoid()}`)
-
-
     })
 
 
